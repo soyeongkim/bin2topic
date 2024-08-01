@@ -1,0 +1,9 @@
+<launch>
+    <!-- Node for publishing PointCloud2 messages from bin files -->
+    <node name="bin2topic" pkg="bin2topic" type="bin2topic" output="screen">
+        <!-- Parameters -->
+        <param name="directory" value="/mnt/d/dataset/view_of_delft_PUBLIC/lidar/training/velodyne" />
+        <param name="delta_time_sec" value="0.1" />
+        <param name="frame_id" value="velodyne" />
+    </node>
+</launch>
