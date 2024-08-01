@@ -86,8 +86,9 @@ roslaunch bin2topic bin2topic.launch
 - `bin2topic/directory` (`string`): Directory containing the `.bin` files.
 - `bin2topic/frame_id` (`string`): Frame ID for the point cloud messages.
 - `bin2topic/delta_time_sec` (`double`): Time interval between consecutive point cloud messages.
+- `bin2topic/topic_name` (`string`): Published topic name.
 
 ## Topics
 
 - **Published Topics:**
-  - `/bin2topic/pointcloud` (`sensor_msgs::PointCloud2`): Publishes the converted point cloud data.
+  - `$bin2topic/topic_name` (`sensor_msgs::PointCloud2`): Publishes the converted point cloud data.
