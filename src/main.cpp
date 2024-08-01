@@ -63,20 +63,24 @@ int main(int argc, char** argv) {
     ros::init(argc, argv, "bin2topic");
     
     ros::NodeHandle nh;
-    ros::Publisher pub = nh.advertise<sensor_msgs::PointCloud2>("bin2topic/pointcloud", 1);
 
     std::string directory;
     double delta_time_sec;
     std::string frame_id;
+    std::string topic_name;
 
     nh.param<std::string>("bin2topic/directory", directory, ".");
     nh.param<std::string>("bin2topic/frame_id", frame_id, "base_link");
     nh.param<double>("bin2topic/delta_time_sec", delta_time_sec, 1.0);
+    nh.param<std::string>("bin2topic/topic_name", topic_name, "bin2topic/pointcloud");
 
     // Print parameters
     ROS_INFO_STREAM("Directory: " << directory);
     ROS_INFO_STREAM("Frame ID: " << frame_id);
     ROS_INFO_STREAM("Delta Time (sec): " << delta_time_sec);
+    ROS_INFO_STREAM("Topic Name: " << topic_name);
+
+    ros::Publisher pub = nh.advertise<sensor_msgs::PointCloud2>(topic_name, 1);
 
     std::vector<std::string> bin_files = getSortedBinFiles(directory);
 

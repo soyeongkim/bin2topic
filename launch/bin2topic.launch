@@ -5,5 +5,6 @@
         <param name="directory" value="/mnt/d/dataset/view_of_delft_PUBLIC/lidar/training/velodyne" />
         <param name="delta_time_sec" value="0.1" />
         <param name="frame_id" value="velodyne" />
+         <param name="topic_name" value="custom/pointcloud_topic" />
     </node>
 </launch>
